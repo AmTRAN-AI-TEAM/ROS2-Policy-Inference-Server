@@ -45,33 +45,37 @@ robomimic 模型 (.pth)
 ## 三、安裝方式
 
 ### 1️⃣ 下載專案
+
+請將專案下載至 ROS2 工作區的 `src` 目錄：
 ```bash
 cd ~/ros2_ws/src
 git clone https://github.com/AmTRAN-AI-TEAM/ROS2-Policy-Inference-Server.git
 ```
 
-### 2️⃣ 編譯
-```bash
-cd ~/ros2_ws
-source /opt/ros/humble/setup.bash
-colcon build --symlink-install
-source install/setup.bash
-```
-
 ---
 
-## 四、模型權重設定
+### 2️⃣ 放置模型權重（⚠️ 必須在編譯前完成）
 
-> ⚠️ 本專案不包含模型權重檔，請自行準備已訓練完成的 robomimic 模型。
+本專案**不包含模型權重檔**，請自行準備已訓練完成的 robomimic 模型。
 
 請將模型檔放置於以下路徑：
 ```
 robomimic_policy_srv/models/model_epoch_20.pth
 ```
 
-或自行修改 `policy_service_node.py` 內的模型路徑設定。
+> ⚠️ 請確認模型檔已存在於上述位置後，再進行下一步編譯。
 
 ---
+
+### 3️⃣ 編譯專案
+
+由於模型檔會透過 `setup.py` 安裝至 ROS2 的 `share` 目錄，請在模型放置完成後進行編譯：
+```bash
+cd ~/ros2_ws
+source /opt/ros/humble/setup.bash
+colcon build --symlink-install
+source install/setup.bash
+```
 
 ## 五、啟動推論服務
 
