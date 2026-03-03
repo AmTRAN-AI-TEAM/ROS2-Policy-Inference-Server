@@ -1,0 +1,7 @@
+float32[3] eef_pos
+float32[4] eef_quat
+float32[1] gripper_pos
+sensor_msgs/Image table_cam
+sensor_msgs/Image table_cam_depth
+---
+float32[7] action

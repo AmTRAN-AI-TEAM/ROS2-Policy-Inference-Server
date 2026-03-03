@@ -1,0 +1,11 @@
+# Ignore model weights
+robomimic_policy_srv/models/*.pth
+
+# Python cache
+__pycache__/
+*.pyc
+
+# ROS build artifacts
+build/
+install/
+log/

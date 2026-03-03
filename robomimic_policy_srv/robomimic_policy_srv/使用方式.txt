@@ -1,0 +1,12 @@
+conda deactivate
+source ~/ros2_ml_env/bin/activate
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+
+python -m robomimic_policy_srv.policy_service_node
+
+令一個終端機：
+conda deactivate
+source /opt/ros/humble/setup.bash
+source ~/ros2_ws/install/setup.bash
+ros2 service list
